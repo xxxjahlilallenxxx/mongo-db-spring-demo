@@ -26,13 +26,13 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public ResponseEntity<Expense> addExpense(@RequestBody Expense expense){
+    public ResponseEntity addExpense(@RequestBody Expense expense){
         expenseService.addExpense(expense);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping
-    public ResponseEntity<Expense> updateExpense(@RequestBody Expense expense){
+    public ResponseEntity updateExpense(@RequestBody Expense expense){
         expenseService.updateExpense(expense);
         return ResponseEntity.ok().build();
     }
@@ -48,7 +48,7 @@ public class ExpenseController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Expense> deleteExpense(@PathVariable String id){
+    public ResponseEntity deleteExpense(@PathVariable String id){
         expenseService.deleteExpense(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
